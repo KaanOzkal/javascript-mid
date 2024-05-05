@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+    <input id="text" type="text">
+    <button id="btn">kaydet</button>
+    <button id="btn2">veri al</button>
+    <div id="vericek">
+         
+    </div>
+    <button id="clear">veriyi temizle</button>
+
+
+
+<a href="li"></a>
+
+
+    <script>
+        const text=document.getElementById("text")
+        const btn=document.getElementById("btn")
+        const btn2=document.getElementById("btn2")
+        const clear=document.getElementById("clear")
+        const vericek=document.getElementById("vericek");
+
+        btn.onclick=()=>{
+            localStorage.setItem("text",text.value)
+            localStorage.setItem("text1",text.value)
+            localStorage.setItem("text2",text.value)
+            localStorage.setItem("text3",text.value)
+        }
+        btn2.onclick=()=>{
+            vericek.innerHTML = localStorage.getItem("text")
+        }
+        clear.onclick=()=>{
+            localStorage.removeItem("text")
+            localStorage.clear("text");
+        }
+    </script>
+</body>
+</html>
