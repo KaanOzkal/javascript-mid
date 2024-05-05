@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini uygulama</title>
+    <style>
+        div{
+            width: 60%;
+            height: 400px;
+            margin: 50px auto;
+            
+            border-radius: 10px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        button{
+            background: rgb(24,199,200);
+            background: linear-gradient(90deg, rgba(24,199,200,1) 20%, rgba(217,51,180,1) 53%, rgba(168,51,217,1) 85%);
+            border: 1px solid pink;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 16%;
+            font-size: 50px;
+            box-shadow: 10px 8px 10px 5px  darkblue;
+            
+        }
+        button:active{
+            box-shadow: 5px 5px 5px 5px purple;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/mini1.jpg" id="img1" alt="">
+    </div>
+    <hr>
+    <button id="ileri">bir ileri git</button>
+    <button id="geri">1 geri git</button>
+    <button id="rastgele">rastgele</button>
+
+    
+
+
+    <script>
+        let img=document.getElementById("img1")
+        let ileri=document.getElementById("ileri")
+        let geri=document.getElementById("geri")
+        let rastgele=document.getElementById("rastgele")
+        let resimler=["mini1.jpg","mini2.jpg","mini3.jpg","mini5.jpg","mini4.jpg","mini6.jpg","mini7.jpg"]
+        let count=0
+        rastgele.onclick=function(){
+            let mini=Math.floor(Math.random()*resimler.length)
+            console.log(resimler[mini])
+            img.src=`img/${resimler[mini]}`
+            count=mini
+        }
+        ileri.onclick=function(){
+            
+            count++;
+            if (count<resimler.length)
+            {
+                img.src=`img/${resimler[count]}`
+            }
+            else {
+                count=0;
+                img.src=`img/${resimler[count]}`
+            }
+        }
+        geri.onclick=function(){
+            
+            count--;
+            if (count>=0)
+            {
+                img.src=`img/${resimler[count]}`
+            }
+            else {
+                count=resimler.length-1
+                img.src=`img/${resimler[count]}`
+            }
+        }
+    </script>
+</body>
+</html>
